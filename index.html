@@ -4,186 +4,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Victor Alawode">
-    <meta name="description" content="Portfolio of Victor Alawode (NEWBOSS): cybersecurity student, web developer and creative educator.">
+    <meta name="author" content="Peace Alawode">
+    <meta name="description" content="Portfolio of Peace Alawode (NEWBOSS): cybersecurity student, web developer and teacher.">
+    <title>Peace Alawode | NEWBOSS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="detail.css" type="text/css">
-    <title>NEWBOSS | Portfolio</title>
+
+    <!-- Marks the page as "JavaScript is running" so the CSS can style the mobile menu. -->
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 
 <body>
 
-    <header>
-        <h1>NEWBOSS</h1>
-        <nav>
-            <a href="#home">Home</a>
+    <header class="site-header">
+        <a class="wordmark" href="#home">NEWBOSS</a>
+        <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav id="site-nav" class="site-nav">
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
-            <a href="#leadership">Leadership</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <!-- HERO -->
     <section id="home" class="hero">
-        <!-- IMAGE NEEDED: your profile photo -> save as images/profile.jpg, then replace this box with:
-             <img class="profile" src="images/profile.jpg" alt="Victor Alawode"> -->
-        <div class="img-placeholder round">Your photo<br>images/profile.jpg</div>
-        <h2>Hi, I'm Victor Alawode, also known as NEWBOSS</h2>
-        <p class="tagline">Cybersecurity student. Web developer. Creative educator.</p>
-        <a class="btn" href="#projects">See my work</a>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            I'm a 100-level Cybersecurity student at Ladoke Akintola University of Technology (LAUTECH), Ogbomoso, Nigeria.
-            I build web applications with PHP, MySQL, HTML and CSS, and I teach creative digital skills to other beginners.
-        </p>
-        <p>
-            I type my code line by line, ask why it works, and test it straight away. My long-term goal is to work in
-            cybersecurity and build security tools that use AI.
-        </p>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="cards">
-
-            <article class="card featured">
-                <!-- IMAGE NEEDED: Kreatives Hub logo or class flyer -> images/kreatives-hub.jpg -->
-                <div class="img-placeholder">Kreatives Hub logo or flyer<br>images/kreatives-hub.jpg</div>
-                <h3>New Boss Academy &middot; Kreatives Hub</h3>
-                <p class="meta">Founder and lead instructor &middot; formerly Cyber Squad For Christ</p>
-                <p>
-                    An online learning community and content brand I started, which now runs as New Boss Academy.
-                    I built and run The Beginner's Launch Pad, a free cohort that teaches beginners graphic design
-                    (Pixellab), AI animation (Vheer AI and Qwen AI) and video editing (CapCut). Each skill is taught
-                    in a 7-day class block, with recorded lessons, assignments and live Q&amp;A sessions.
-                </p>
-                <ul>
-                    <li>Community of about 70 members</li>
-                    <li>Wrote the teaching notes, assignment books, class structure and admin onboarding guide</li>
-                    <li>Rebuilt the programme as "Round 2" after a stall, with a team of admins and a co-founder</li>
-                    <li>Rebranded with a new logo and purple identity</li>
-                </ul>
-            </article>
-
-            <article class="card featured">
-                <!-- IMAGE NEEDED: screenshot of EventSys dashboard -> images/eventsys.png -->
-                <div class="img-placeholder">EventSys screenshot<br>images/eventsys.png</div>
-                <h3>EventSys</h3>
-                <p class="meta">CYB104 group project &middot; Group leader &middot; PHP, MySQL</p>
-                <p>
-                    A web-based event registration and attendance verification system. I led Group 5 through a full
-                    rebuild after our first defence, using the tutors' feedback.
-                </p>
-                <ul>
-                    <li>CSRF protection, secure sessions and rate limiting</li>
-                    <li>Super admin role system and pagination</li>
-                    <li>Automatic database setup script</li>
-                    <li>Full project report generated as a PDF with Python (ReportLab)</li>
-                </ul>
-            </article>
-
-            <article class="card">
-                <!-- IMAGE NEEDED: screenshot of BookGuard -> images/bookguard.png -->
-                <div class="img-placeholder">BookGuard screenshot<br>images/bookguard.png</div>
-                <h3>BookGuard</h3>
-                <p class="meta">Library Book Borrowing Portal &middot; PHP, MySQL</p>
-                <p>
-                    A library borrowing system with full create, read, update and delete (CRUD) features, using
-                    prepared statements to protect the database.
-                </p>
-            </article>
-
-            <article class="card">
-                <!-- IMAGE NEEDED: screenshot of the login page -> images/student-login.png -->
-                <div class="img-placeholder">Login system screenshot<br>images/student-login.png</div>
-                <h3>Student Login System</h3>
-                <p class="meta">PHP, MySQL, HTML, CSS</p>
-                <p>
-                    A login system I built from scratch on XAMPP as part of a structured mentorship track, which led
-                    to three smaller projects:
-                </p>
-                <ul>
-                    <li>Student Result Checker</li>
-                    <li>Login Role Checker</li>
-                    <li>Student Registration Portal</li>
-                </ul>
-            </article>
-
-            <article class="card">
-                <!-- IMAGE NEEDED (optional): screenshot of this site -> images/this-site.png -->
-                <div class="img-placeholder">This site<br>images/this-site.png</div>
-                <h3>This Portfolio</h3>
-                <p class="meta">HTML, CSS &middot; My first website</p>
-                <p>
-                    My first website, built for Hack Club's Personal Site mission and published with GitHub Pages.
-                </p>
-            </article>
-
+        <div class="hero-text">
+            <h1>Peace<br>Alawode</h1>
+            <p class="alias">Online as NEWBOSS</p>
+            <p class="goal">I'm working to become someone capable of making cyberspace safer, more flexible and more reliable.</p>
+            <p class="hero-links">
+                <a class="btn btn-brass" href="#projects">See my projects</a>
+                <a class="btn btn-outline" href="#contact">Contact</a>
+            </p>
         </div>
+        <!-- IMAGE NEEDED: your profile photo, save as images/profile.jpg, then replace the box below with:
+             <img class="portrait" src="images/profile.jpg" alt="Peace Alawode"> -->
+        <div class="ph portrait-ph">Your photo<br>images/profile.jpg</div>
     </section>
 
-    <!-- SKILLS -->
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skill-groups">
-            <div class="skill-group">
-                <h3>Web development</h3>
-                <ul>
-                    <li>HTML and CSS</li>
-                    <li>PHP</li>
-                    <li>MySQL</li>
-                    <li>Secure coding basics (CSRF, sessions, prepared statements)</li>
-                </ul>
-            </div>
-            <div class="skill-group">
-                <h3>Creative</h3>
-                <ul>
-                    <li>Graphic design</li>
-                    <li>AI animation</li>
-                    <li>Video editing</li>
-                    <li>Teaching and content creation</li>
-                </ul>
-            </div>
-            <div class="skill-group">
-                <h3>Learning now</h3>
-                <ul>
-                    <li>Python fundamentals</li>
-                    <li>Cybersecurity</li>
-                    <li>Advanced CSS (Flexbox and Grid)</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    <main>
 
-    <!-- LEADERSHIP -->
-    <section id="leadership">
-        <h2>Leadership and Service</h2>
-        <ul class="plain">
-            <li>Founder of New Boss Academy &middot; Kreatives Hub, where I lead a team of admins and teach an evening class Monday to Saturday.</li>
-            <li>Group leader for the EventSys project in CYB104.</li>
-            <li>Active member of the Royal Ambassadors of Nigeria (RAN), where I completed the Ambassador rank requirements.</li>
-        </ul>
-        <!-- IMAGE NEEDED (optional): a photo of you teaching or at a RAN event -> images/leadership.jpg -->
-        <div class="img-placeholder wide">Photo of you teaching or leading<br>images/leadership.jpg</div>
-    </section>
+        <!-- ABOUT -->
+        <section id="about" class="block">
+            <h2>About me</h2>
+            <div class="about-text">
+                <p>
+                    I'm a 200-level Cybersecurity student at LAUTECH in Ogbomoso, Nigeria. I came into university
+                    knowing basic HTML. Since then I've learned CSS, PHP and MySQL by building real projects: login
+                    systems, a library portal and a group event system.
+                </p>
+                <p>
+                    I also run an online community where I teach creative skills to beginners.
+                </p>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="block">
+            <h2>Projects</h2>
+
+            <div class="filters" role="group" aria-label="Filter projects">
+                <button class="filter is-active" data-filter="all" aria-pressed="true">All</button>
+                <button class="filter" data-filter="web" aria-pressed="false">Web</button>
+                <button class="filter" data-filter="creative" aria-pressed="false">Creative</button>
+            </div>
+
+            <article class="project featured" data-type="creative">
+                <!-- IMAGE NEEDED: Kreatives Hub logo or a class flyer, save as images/kreatives-hub.jpg -->
+                <div class="ph">Kreatives Hub logo or flyer<br>images/kreatives-hub.jpg</div>
+                <div class="project-body">
+                    <h3>New Boss Academy, Kreatives Hub</h3>
+                    <p class="note">Formerly Cyber Squad For Christ</p>
+                    <p>
+                        An online community of about 70 members where I teach graphic design, AI animation and video
+                        editing to beginners. I'm the founder and lead instructor, and I write the teaching notes and
+                        assignments. I'm now rebuilding the programme from scratch.
+                    </p>
+                </div>
+            </article>
+
+            <article class="project featured" data-type="web">
+                <!-- IMAGE NEEDED: screenshot of the EventSys dashboard, save as images/eventsys.png -->
+                <div class="ph">EventSys screenshot<br>images/eventsys.png</div>
+                <div class="project-body">
+                    <h3>EventSys</h3>
+                    <p class="note">CYB104 group project, I was group leader</p>
+                    <p>
+                        A web system for event registration and attendance verification. After our first defence I led
+                        a full rebuild. It now has CSRF protection, secure sessions, rate limiting, an admin role
+                        system and a PDF report.
+                    </p>
+                    <p class="stack">PHP, MySQL</p>
+                </div>
+            </article>
+
+            <div class="compact-grid">
+
+                <article class="project" data-type="web">
+                    <!-- IMAGE NEEDED: screenshot of BookGuard, save as images/bookguard.png -->
+                    <div class="ph">BookGuard screenshot<br>images/bookguard.png</div>
+                    <h3>BookGuard</h3>
+                    <p>
+                        A library borrowing portal. Users can add, view, edit and delete records, and every query
+                        uses prepared statements.
+                    </p>
+                    <p class="stack">PHP, MySQL</p>
+                </article>
+
+                <article class="project" data-type="web">
+                    <!-- IMAGE NEEDED: screenshot of the login page, save as images/student-login.png -->
+                    <div class="ph">Login page screenshot<br>images/student-login.png</div>
+                    <h3>Student Login System</h3>
+                    <p>
+                        My first backend project, built from scratch on XAMPP. It led to a Result Checker, a Login
+                        Role Checker and a Registration Portal.
+                    </p>
+                    <p class="stack">PHP, MySQL, HTML, CSS</p>
+                </article>
+
+                <article class="project" data-type="web">
+                    <!-- IMAGE NEEDED (optional): screenshot of this site, save as images/this-site.png -->
+                    <div class="ph">This site<br>images/this-site.png</div>
+                    <h3>This site</h3>
+                    <p>
+                        My first website, hosted on GitHub Pages.
+                    </p>
+                    <p class="stack">HTML, CSS, JavaScript</p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="block">
+            <h2>Skills</h2>
+            <div class="skill-groups">
+                <div>
+                    <h3>Web development</h3>
+                    <ul>
+                        <li>HTML and CSS</li>
+                        <li>PHP</li>
+                        <li>MySQL</li>
+                        <li>CSRF protection, secure sessions, prepared statements</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Creative</h3>
+                    <ul>
+                        <li>Graphic design</li>
+                        <li>AI animation</li>
+                        <li>Video editing</li>
+                        <li>Teaching</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Learning now</h3>
+                    <ul>
+                        <li>Python fundamentals</li>
+                        <li>Cybersecurity</li>
+                        <li>JavaScript</li>
+                        <li>Advanced CSS (Flexbox and Grid)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <!-- CONTACT -->
-    <section id="contact">
+    <section id="contact" class="contact">
         <h2>Contact</h2>
-        <p>Find my code on GitHub:</p>
-        <a class="btn" href="https://github.com/alawodevictor04-ctrl">github.com/alawodevictor04-ctrl</a>
-        <!-- Add your public social links here, for example YouTube or Instagram, as extra <a class="btn"> links. -->
+        <p>My code is on GitHub.</p>
+        <p><a class="btn btn-brass" href="https://github.com/alawodevictor04-ctrl">github.com/alawodevictor04-ctrl</a></p>
+        <!-- Add your public social links here as extra <a class="btn btn-outline"> links. -->
     </section>
 
-    <footer>
-        <p>&copy; 2026 Victor Alawode (NEWBOSS)</p>
+    <footer class="site-footer">
+        <p>&copy; 2026 Peace Alawode (NEWBOSS)</p>
     </footer>
 
+    <button class="to-top" id="to-top" aria-label="Back to top" hidden>Top</button>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
