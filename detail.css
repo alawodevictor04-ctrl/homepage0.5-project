@@ -1,3 +1,10 @@
+:root {
+    --accent: #9b4fe0;
+    --accent-dark: #7a35bd;
+    --dark: #1f1a26;
+    --light: #f4f1f8;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -5,11 +12,14 @@ html {
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background: #f4f4f4;
+    background: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
 }
 
+/* Header and nav */
 header {
-    background: #222;
+    background: var(--dark);
     color: white;
     padding: 20px;
     text-align: center;
@@ -17,29 +27,154 @@ header {
 
 nav a {
     color: white;
-    margin: 10px;
+    margin: 8px;
     text-decoration: none;
+    display: inline-block;
+    transition: color 0.3s;
 }
 
+nav a:hover {
+    color: var(--accent);
+}
+
+/* Sections */
 section {
-    padding: 50px;
+    padding: 40px 24px;
     text-align: center;
     background: white;
-    margin: 20px;
+    margin: 20px auto;
+    max-width: 1000px;
     border-radius: 10px;
 }
 
+h2 {
+    color: var(--accent);
+}
+
+.hero {
+    padding: 50px 24px;
+}
+
+.tagline {
+    font-size: 1.2em;
+}
+
+/* Buttons */
+.btn,
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 15px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover,
+button:hover {
+    background: var(--accent-dark);
+}
+
+/* Image placeholders (replace these with real images) */
+.img-placeholder {
+    background: #e8def5;
+    border: 2px dashed var(--accent);
+    color: var(--accent-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 160px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 10px;
+}
+
+.img-placeholder.round {
+    width: 150px;
+    height: 150px;
+    min-height: 0;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    font-size: 0.8em;
+}
+
+.img-placeholder.wide {
+    max-width: 600px;
+    margin: 20px auto 0;
+}
+
+.profile {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Project cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    text-align: left;
+}
+
+.card {
+    background: var(--light);
+    padding: 16px;
+    border-radius: 10px;
+    border-top: 4px solid var(--accent);
+}
+
+.card.featured {
+    grid-column: 1 / -1;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.card h3 {
+    margin: 8px 0 0;
+}
+
+.meta {
+    color: var(--accent-dark);
+    font-size: 0.9em;
+    margin: 4px 0 10px;
+}
+
+/* Skills */
+.skill-groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    text-align: left;
+}
+
+.skill-group {
+    background: var(--light);
+    padding: 16px;
+    border-radius: 10px;
+}
+
+.plain {
+    text-align: left;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Footer */
 footer {
-    background: #222;
+    background: var(--dark);
     color: white;
     padding: 15px;
     text-align: center;
     margin-top: 40px;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    margin-top: 15px;
-    cursor: pointer;
 }
