@@ -1,14 +1,17 @@
 /* ---------- Tokens ---------- */
 :root {
-    --stone: #e2e2df;
-    --paper: #f0f0ee;
-    --ink: #121212;
-    --copper: #c4622d;
-    --copper-light: #e07a3a;
-    --steel: #5c5c5c;
+    --navy: #0a1a3a;
+    --line: #243b6b;
+    --white: #ffffff;
+    --soft: #b4c3e0;
+    --sky: #8cc4ff;
 
     --font-head: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
     --font-body: 'IBM Plex Sans', Arial, sans-serif;
+
+    /* Mouse position, updated by script.js */
+    --mx: 50vw;
+    --my: 30vh;
 }
 
 /* ---------- Base ---------- */
@@ -23,8 +26,8 @@ html {
 
 body {
     margin: 0;
-    background: var(--stone);
-    color: var(--ink);
+    background: var(--navy);
+    color: var(--white);
     font-family: var(--font-body);
     font-size: 1.2rem;
     line-height: 1.7;
@@ -51,8 +54,34 @@ a {
 }
 
 :focus-visible {
-    outline: 3px solid var(--copper);
+    outline: 3px solid var(--sky);
     outline-offset: 3px;
+}
+
+/* ---------- Cursor glow ----------
+   A fixed layer behind the content. script.js moves --mx and --my to the mouse,
+   so the light blue circle follows the cursor. */
+.glow {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s;
+    background: radial-gradient(circle 360px at var(--mx) var(--my), rgba(110, 180, 255, 0.5), transparent 72%);
+}
+
+.glow.is-on {
+    opacity: 1;
+}
+
+/* Content sits above the glow */
+.hero,
+main,
+.contact,
+.site-footer {
+    position: relative;
+    z-index: 1;
 }
 
 /* ---------- Header and nav ---------- */
@@ -65,9 +94,8 @@ a {
     justify-content: space-between;
     padding: 0 24px;
     min-height: 64px;
-    background: var(--ink);
-    color: var(--paper);
-    border-bottom: 1px solid #333;
+    background: var(--navy);
+    border-bottom: 1px solid var(--line);
 }
 
 .wordmark {
@@ -89,15 +117,15 @@ a {
 
 .site-nav a:hover,
 .site-nav a[aria-current="true"] {
-    color: var(--copper-light);
-    border-bottom-color: var(--copper-light);
+    color: var(--sky);
+    border-bottom-color: var(--sky);
 }
 
 .menu-btn {
     display: none;
     background: none;
-    border: 2px solid var(--paper);
-    color: var(--paper);
+    border: 2px solid var(--white);
+    color: var(--white);
     font: inherit;
     padding: 6px 14px;
     cursor: pointer;
@@ -114,28 +142,26 @@ a {
 }
 
 .btn-accent {
-    background: var(--copper-light);
-    color: var(--ink);
+    background: var(--white);
+    color: var(--navy);
 }
 
 .btn-accent:hover {
-    background: var(--paper);
+    background: var(--sky);
 }
 
 .btn-outline {
-    border-color: var(--paper);
-    color: var(--paper);
+    border-color: var(--white);
+    color: var(--white);
 }
 
 .btn-outline:hover {
-    background: var(--paper);
-    color: var(--ink);
+    background: var(--white);
+    color: var(--navy);
 }
 
 /* ---------- Hero ---------- */
 .hero {
-    background: var(--ink);
-    color: var(--paper);
     padding: 72px max(24px, calc((100% - 1040px) / 2 + 24px)) 80px;
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(220px, 340px);
@@ -155,7 +181,7 @@ a {
 }
 
 .alias {
-    color: var(--copper-light);
+    color: var(--sky);
     font-weight: 500;
     margin: 16px 0 28px;
 }
@@ -188,17 +214,13 @@ a {
     text-align: center;
     min-height: 170px;
     padding: 12px;
-    border: 2px dashed var(--steel);
-    color: var(--steel);
-    background: var(--paper);
+    border: 2px dashed #4a6aa8;
+    color: var(--soft);
     font-size: 1rem;
 }
 
 .portrait-ph {
     min-height: 0;
-    border-color: var(--copper-light);
-    color: var(--copper-light);
-    background: #2a2a2a;
 }
 
 /* ---------- Content blocks ---------- */
@@ -214,7 +236,7 @@ a {
     font-size: clamp(2.2rem, 5vw, 3.2rem);
     margin-bottom: 28px;
     padding-bottom: 14px;
-    border-bottom: 4px solid var(--copper);
+    border-bottom: 4px solid var(--sky);
     width: fit-content;
 }
 
@@ -235,20 +257,21 @@ a {
     font-weight: 500;
     padding: 8px 18px;
     background: transparent;
-    color: var(--ink);
-    border: 2px solid var(--ink);
+    color: var(--white);
+    border: 2px solid var(--white);
     cursor: pointer;
     transition: background 0.2s, color 0.2s;
 }
 
 .filter:hover {
-    background: var(--paper);
+    border-color: var(--sky);
+    color: var(--sky);
 }
 
 .filter.is-active {
-    background: var(--ink);
-    border-color: var(--ink);
-    color: var(--paper);
+    background: var(--white);
+    border-color: var(--white);
+    color: var(--navy);
 }
 
 .project h3 {
@@ -258,7 +281,7 @@ a {
 }
 
 .project .note {
-    color: var(--steel);
+    color: var(--soft);
     font-size: 1.05rem;
     margin-bottom: 10px;
 }
@@ -266,7 +289,7 @@ a {
 .stack {
     font-weight: 600;
     font-size: 1rem;
-    color: var(--ink);
+    color: var(--sky);
 }
 
 .featured {
@@ -275,7 +298,7 @@ a {
     gap: 32px;
     align-items: start;
     padding: 28px 0;
-    border-top: 2px solid var(--ink);
+    border-top: 2px solid var(--line);
 }
 
 .featured .ph {
@@ -292,7 +315,7 @@ a {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 32px;
     padding-top: 28px;
-    border-top: 2px solid var(--ink);
+    border-top: 2px solid var(--line);
 }
 
 .project img {
@@ -310,7 +333,7 @@ a {
 .skill-groups h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: var(--ink);
+    color: var(--sky);
 }
 
 .skill-groups ul {
@@ -320,10 +343,9 @@ a {
 
 /* ---------- Contact and footer ---------- */
 .contact {
-    background: var(--ink);
-    color: var(--paper);
     margin-top: 72px;
     padding: 64px 24px;
+    border-top: 1px solid var(--line);
 }
 
 .contact>* {
@@ -341,9 +363,8 @@ a {
 }
 
 .site-footer {
-    background: var(--ink);
-    color: var(--stone);
     padding: 0 24px 28px;
+    color: var(--soft);
     font-size: 0.9rem;
 }
 
@@ -351,18 +372,19 @@ a {
     max-width: 992px;
     margin: 0 auto;
     padding-top: 20px;
-    border-top: 1px solid var(--steel);
+    border-top: 1px solid var(--line);
 }
 
 .to-top {
     position: fixed;
     right: 20px;
     bottom: 20px;
+    z-index: 5;
     padding: 10px 16px;
     font: inherit;
     font-weight: 600;
-    background: var(--copper-light);
-    color: var(--ink);
+    background: var(--white);
+    color: var(--navy);
     border: none;
     cursor: pointer;
 }
@@ -399,7 +421,8 @@ a {
         top: 100%;
         left: 0;
         right: 0;
-        background: var(--ink);
+        background: var(--navy);
+        border-bottom: 1px solid var(--line);
         padding: 8px 24px 16px;
     }
 
@@ -411,7 +434,7 @@ a {
         display: block;
         margin: 0;
         padding: 12px 0;
-        border-bottom: 1px solid var(--steel);
+        border-bottom: 1px solid var(--line);
     }
 
     .site-header {

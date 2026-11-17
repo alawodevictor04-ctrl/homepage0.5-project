@@ -1,5 +1,6 @@
 // script.js: makes the page interactive.
-// It does four things: mobile menu, project filter, active nav link, back-to-top button.
+// It does five things: mobile menu, project filter, active nav link, back-to-top button,
+// and a light blue glow that follows the mouse.
 
 // 1. Mobile menu: the Menu button opens and closes the nav links.
 const menuBtn = document.getElementById('menu-btn');
@@ -68,3 +69,36 @@ window.addEventListener('scroll', function () {
 toTop.addEventListener('click', function () {
     window.scrollTo({ top: 0 });
 });
+
+// 5. Cursor glow: a light blue circle follows the mouse.
+// The CSS (.glow) draws the circle at --mx and --my. Here we keep updating those two values.
+const glow = document.getElementById('glow');
+const root = document.documentElement;
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+let targetX = window.innerWidth / 2;
+let targetY = window.innerHeight * 0.3;
+let glowX = targetX;
+let glowY = targetY;
+
+function moveGlow() {
+    // Move 15% of the way to the mouse each frame, so the glow follows smoothly.
+    glowX += (targetX - glowX) * (reduceMotion ? 1 : 0.15);
+    glowY += (targetY - glowY) * (reduceMotion ? 1 : 0.15);
+    root.style.setProperty('--mx', glowX + 'px');
+    root.style.setProperty('--my', glowY + 'px');
+    requestAnimationFrame(moveGlow);
+}
+
+window.addEventListener('pointermove', function (event) {
+    targetX = event.clientX;
+    targetY = event.clientY;
+    glow.classList.add('is-on');
+});
+
+// Fade the glow out when the mouse leaves the window.
+document.addEventListener('pointerleave', function () {
+    glow.classList.remove('is-on');
+});
+
+moveGlow();

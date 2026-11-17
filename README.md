@@ -9,7 +9,7 @@ My first website: a personal portfolio for Peace Alawode (NEWBOSS), built for Ha
 - Contact
 
 ## Built with
-HTML, CSS and JavaScript, published with GitHub Pages. The JavaScript (`script.js`) adds a mobile menu, a project filter, an active nav link and a back-to-top button.
+HTML, CSS and JavaScript, published with GitHub Pages. The JavaScript (`script.js`) adds a mobile menu, a project filter, an active nav link, a back-to-top button and a light blue glow that follows the mouse.
 
 ## AI usage
 I used Claude (Anthropic) to help with this project:
