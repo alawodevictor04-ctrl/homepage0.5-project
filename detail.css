@@ -1,12 +1,11 @@
 /* ---------- Tokens ---------- */
 :root {
-    --concrete: #dcdfdb;
-    --paper: #eceeea;
-    --ink: #151a19;
-    --petrol: #1d3a35;
-    --brass: #b98a2e;
-    --brass-light: #d4a843;
-    --steel: #55656a;
+    --stone: #e2e2df;
+    --paper: #f0f0ee;
+    --ink: #121212;
+    --copper: #c4622d;
+    --copper-light: #e07a3a;
+    --steel: #5c5c5c;
 
     --font-head: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
     --font-body: 'IBM Plex Sans', Arial, sans-serif;
@@ -24,10 +23,11 @@ html {
 
 body {
     margin: 0;
-    background: var(--concrete);
+    background: var(--stone);
     color: var(--ink);
     font-family: var(--font-body);
-    line-height: 1.65;
+    font-size: 1.2rem;
+    line-height: 1.7;
 }
 
 h1,
@@ -51,7 +51,7 @@ a {
 }
 
 :focus-visible {
-    outline: 3px solid var(--brass);
+    outline: 3px solid var(--copper);
     outline-offset: 3px;
 }
 
@@ -67,6 +67,7 @@ a {
     min-height: 64px;
     background: var(--ink);
     color: var(--paper);
+    border-bottom: 1px solid #333;
 }
 
 .wordmark {
@@ -80,6 +81,7 @@ a {
 .site-nav a {
     margin-left: 28px;
     text-decoration: none;
+    font-size: 1.05rem;
     padding: 6px 0;
     border-bottom: 2px solid transparent;
     transition: border-color 0.2s, color 0.2s;
@@ -87,8 +89,8 @@ a {
 
 .site-nav a:hover,
 .site-nav a[aria-current="true"] {
-    color: var(--brass-light);
-    border-bottom-color: var(--brass-light);
+    color: var(--copper-light);
+    border-bottom-color: var(--copper-light);
 }
 
 .menu-btn {
@@ -111,12 +113,12 @@ a {
     transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
 
-.btn-brass {
-    background: var(--brass-light);
+.btn-accent {
+    background: var(--copper-light);
     color: var(--ink);
 }
 
-.btn-brass:hover {
+.btn-accent:hover {
     background: var(--paper);
 }
 
@@ -132,7 +134,7 @@ a {
 
 /* ---------- Hero ---------- */
 .hero {
-    background: var(--petrol);
+    background: var(--ink);
     color: var(--paper);
     padding: 72px max(24px, calc((100% - 1040px) / 2 + 24px)) 80px;
     display: grid;
@@ -153,7 +155,7 @@ a {
 }
 
 .alias {
-    color: var(--brass-light);
+    color: var(--copper-light);
     font-weight: 500;
     margin: 16px 0 28px;
 }
@@ -188,15 +190,15 @@ a {
     padding: 12px;
     border: 2px dashed var(--steel);
     color: var(--steel);
-    background: rgba(21, 26, 25, 0.04);
-    font-size: 0.9rem;
+    background: var(--paper);
+    font-size: 1rem;
 }
 
 .portrait-ph {
     min-height: 0;
-    border-color: var(--brass-light);
-    color: var(--brass-light);
-    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--copper-light);
+    color: var(--copper-light);
+    background: #2a2a2a;
 }
 
 /* ---------- Content blocks ---------- */
@@ -212,12 +214,13 @@ a {
     font-size: clamp(2.2rem, 5vw, 3.2rem);
     margin-bottom: 28px;
     padding-bottom: 14px;
-    border-bottom: 4px solid var(--brass);
+    border-bottom: 4px solid var(--copper);
     width: fit-content;
 }
 
 .about-text {
-    max-width: 62ch;
+    max-width: 60ch;
+    font-size: 1.3rem;
 }
 
 /* ---------- Projects ---------- */
@@ -243,8 +246,8 @@ a {
 }
 
 .filter.is-active {
-    background: var(--petrol);
-    border-color: var(--petrol);
+    background: var(--ink);
+    border-color: var(--ink);
     color: var(--paper);
 }
 
@@ -256,14 +259,14 @@ a {
 
 .project .note {
     color: var(--steel);
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     margin-bottom: 10px;
 }
 
 .stack {
     font-weight: 600;
-    font-size: 0.9rem;
-    color: var(--petrol);
+    font-size: 1rem;
+    color: var(--ink);
 }
 
 .featured {
@@ -307,7 +310,7 @@ a {
 .skill-groups h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: var(--petrol);
+    color: var(--ink);
 }
 
 .skill-groups ul {
@@ -339,7 +342,7 @@ a {
 
 .site-footer {
     background: var(--ink);
-    color: var(--concrete);
+    color: var(--stone);
     padding: 0 24px 28px;
     font-size: 0.9rem;
 }
@@ -358,7 +361,7 @@ a {
     padding: 10px 16px;
     font: inherit;
     font-weight: 600;
-    background: var(--brass-light);
+    background: var(--copper-light);
     color: var(--ink);
     border: none;
     cursor: pointer;
